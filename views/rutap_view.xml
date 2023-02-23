@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+        <!-- vista tipo form del modelo basurafuera.rutap -->	
+		<record model="ir.ui.view" id="rutap_form">
+		<field name="name">basurafuera.rutap.form</field>
+		<field name="model">basurafuera.rutap</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <sheet>
+                <group string="Datos de la ruta posiciones">
+
+					<field name="name" string="Nombre de la Ruta"/>
+					<field name="horario" placeholder="Horario"/>
+					<field name="dias" placeholder="Dias"/>
+                    <field name="camion" placeholder="Placas"/>
+					<field name="posiciones" placeholder="posiciones">
+						<tree string="Ruta posiciones Real" >
+						<field name="name"/>
+						<field name="longitud"/>
+						<field name="latitud"/>
+						<field name="ruta"/>
+
+				</tree>
+					</field>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+
+        <!-- vista tipo tree del modelo BasuraFuera.rutap -->	
+		<record model="ir.ui.view" id="basurafuera_rutap_tree">
+			<field name="name">basurafuera.rutap.tree</field>
+			<field name="model">basurafuera.rutap</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Ruta posiciones" >
+						<field name="name" string="Nombre de la Ruta"/>
+						<field name="horario"/>
+						<field name="dias"/>
+						<field name="camion"/>
+
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="BasuraFuera_rutap_search">
+			<field name="name">basurafuera.rutap.search</field>
+			<field name="model">basurafuera.rutap</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<field name="horario"/>
+					<field name="dias"/>
+					<field name="camion"/>
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO BasuraFuera.rutap -->	
+		<record id="BasuraFuera_rutap_action" model="ir.actions.act_window">
+			<field name="name">RUTA POSICIONES</field>
+			<field name="res_model">basurafuera.rutap</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+</odoo>

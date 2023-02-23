@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+
+
+        <!-- vista tipo form del modelo basurafuera.rutap -->	
+		<record model="ir.ui.view" id="rutar_form">
+		<field name="name">basurafuera.rutar.form</field>
+		<field name="model">basurafuera.rutar</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <sheet>
+                <group string="Datos de la ruta Real">
+
+                    <field name="name" string="Identificador de la ruta"/>
+					<field name="fechainicio" placeholder="Fecha Inicio"/>
+					<field name="fechafinal" placeholder="Fecha Final"/>
+                    <field name="camion" placeholder="Camion"/>
+					<field name="posiciones" placeholder=" Ruta Real">
+						<tree string="Mapa" >
+						<field name="longitud"/>
+						<field name="latitud"/>
+						
+				</tree>
+					</field>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+
+        <!-- vista tipo tree del modelo BasuraFuera.rutar -->	
+		<record model="ir.ui.view" id="basurafuera_rutar_tree">
+			<field name="name">basurafuera.rutar.tree</field>
+			<field name="model">basurafuera.rutar</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Ruta Real" >
+						<field name="name" string="Identificador de la ruta"/>
+						<field name="fechainicio" string= "Fecha de Inicio"/>
+						<field name="fechafinal" string= "Fecha Final"/>
+						<field name="camion"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="BasuraFuera_rutar_search">
+			<field name="name">basurafuera.rutar.search</field>
+			<field name="model">basurafuera.rutar</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<field name="fechainicio"/>
+					<field name="fechafinal"/>
+					<field name="camion"/>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACCION PARA EL MODELO BasuraFuera.rutar -->	
+		<record id="BasuraFuera_rutar_action" model="ir.actions.act_window">
+			<field name="name">Ruta Real</field>
+			<field name="res_model">basurafuera.rutar</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+</odoo>

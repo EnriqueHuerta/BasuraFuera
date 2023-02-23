@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- vista tipo form del modelo basurafuera.camiones -->	
+		<record model="ir.ui.view" id="camiones_form">
+		<field name="name">basurafuera.camiones.form</field>
+		<field name="model">basurafuera.camiones</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <sheet>
+                <group string="Datos de camiones">
+                    <field name="name" string="Placas"/>
+					<field name="descripccion" placeholder="Descripccion De La Unidad"/>
+                    <field name="chofer" placeholder="Chofer"/>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+		
+        <!-- vista tipo tree del modelo BasuraFuera.camiones -->	
+
+		<record model="ir.ui.view" id="basurafuera_camiones_tree">
+			<field name="name">basurafuera.camiones.tree</field>
+			<field name="model">basurafuera.camiones</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Camiones" >
+						<field name="name" string="Placas"/>
+						<field name="descripccion"/>
+						<field name="chofer"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record model="ir.ui.view" id="BasuraFuera_camiones_search">
+			<field name="name">basurafuera.camiones.search</field>
+			<field name="model">basurafuera.camiones</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<field name="descripccion"/>
+					<field name="chofer"/>
+				</search>
+			</field>
+		</record>
+
+		<!-- ACCION PARA EL MODELO BasuraFuera.camiones -->	
+		<record id="BasuraFuera_camiones_action" model="ir.actions.act_window">
+			<field name="name">CAMIONES</field>
+			<field name="res_model">basurafuera.camiones</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+</odoo>

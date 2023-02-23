@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+
+
+        <!-- vista tipo form del modelo basurafuera.rutap -->	
+		<record model="ir.ui.view" id="rutaposreal_form">
+		<field name="name">basurafuera.rutaposreal.form</field>
+		<field name="model">basurafuera.rutaposreal</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <sheet>
+                <group string="Datos de la ruta Posicion Real">
+
+					<field name="name" string="Tipo de Posicion"/>
+					<field name="longitud" placeholder="Longitud"/>
+                    <field name="latitud" placeholder="Latitud"/>
+                    <field name="ruta" placeholder="ruta Real"/>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+
+        <!-- vista tipo tree del modelo BasuraFuera.rutap -->	
+		<record model="ir.ui.view" id="basurafuera_rutaposreal_tree">
+			<field name="name">basurafuera.rutaposreal.tree</field>
+			<field name="model">basurafuera.rutaposreal</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Ruta Posicion Real" >
+                        <field name="name" string="Tipo de Posicion"/>
+						<field name="longitud"/>
+						<field name="latitud"/>
+						<field name="ruta"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="BasuraFuera_rutaposreal_search">
+			<field name="name">basurafuera.rutaposreal.search</field>
+			<field name="model">basurafuera.rutaposreal</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name"/>
+					<field name="longitud"/>
+                    <field name="latitud"/>
+					<field name="ruta"/>
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO BasuraFuera.rutaP -->	
+		<record id="BasuraFuera_rutaposreal_action" model="ir.actions.act_window">
+			<field name="name">Ruta Posicion Real</field>
+			<field name="res_model">basurafuera.rutaposreal</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+</odoo>

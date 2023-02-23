@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<menuitem name="Basura Fuera" id="BasuraFuera_menu" sequence="20" />
+
+			<menuitem name="PROCESO" id="BasuraFuera_proceso_menu" parent="BasuraFuera_menu" sequence="10"/>
+			
+				<menuitem name="CHOFERES" action="BasuraFuera_choferes_action"  id="BasuraFuera_choferes_menu" sequence="20" parent="BasuraFuera_proceso_menu" />
+				<menuitem name="CAMIONES" action="BasuraFuera_camiones_action"  id="BasuraFuera_camiones_menu" sequence="20" parent="BasuraFuera_proceso_menu" />
+
+			<menuitem name="RUTA PREDETERMINADA" id="BasuraFuera_rutapredeteminada_menu" parent="BasuraFuera_menu" sequence="10"/>
+				<menuitem name="RUTAS POSICION" action="BasuraFuera_rutap_action"  id="BasuraFuera_rutap_menu" sequence="20" parent="BasuraFuera_rutapredeteminada_menu" />
+				<menuitem name="RUTAS PRE POSICION REAL" action="BasuraFuera_rposiciones_action"  id="BasuraFuera_rposiciones_menu" sequence="20" parent="BasuraFuera_rutapredeteminada_menu" />
+				
+			<menuitem name="RUTA REAL" id="BasuraFuera_ruta_menu" parent="BasuraFuera_menu" sequence="10"/>
+				<menuitem name="RUTA REAL" action="BasuraFuera_rutar_action"  id="BasuraFuera_rutar_menu" sequence="20" parent="BasuraFuera_ruta_menu" />
+				<menuitem name="RUTA POSICION REAL" action="BasuraFuera_rutaposreal_action"  id="BasuraFuera_rutaposreal_menu" sequence="20" parent="BasuraFuera_ruta_menu" />
+				
+			<menuitem name="USUARIOS" id="BasuraFuera_usuari_menu" parent="BasuraFuera_menu" sequence="10"/>
+				<menuitem name="USUARIOS" action="BasuraFuera_usuarios_action"  id="BasuraFuera_usuarios_menu" sequence="20" parent="BasuraFuera_usuari_menu" />
+	
+	</data>
+</odoo>

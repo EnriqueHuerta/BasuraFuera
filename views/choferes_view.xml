@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <!-- vista tipo form del modelo basurafuera.choferes -->	
+		<record model="ir.ui.view" id="choferes_form">
+		<field name="name">basurafuera.choferes.form</field>
+		<field name="model">basurafuera.choferes</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+		<form>
+            <sheet>
+                <group string="Datos del Chofer">
+                    <field name="name" string ="Nombre del Chofer"/>
+                    <field name="NumTel" placeholder="Numero de Telefono"/>
+                    <field name="edad" placeholder="Edad"/>
+                </group>
+            </sheet>
+		</form>
+        </field>
+		</record>
+
+        <!-- vista tipo tree del modelo basurafuera.choferes -->	
+		<record model="ir.ui.view" id="BasuraFuera_choferes_tree">
+			<field name="name">basurafuera.choferes.tree</field>
+			<field name="model">basurafuera.choferes</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Choferes" >
+						<field name="name" string="Nombre"/>
+						<field name="NumTel" />
+						<field name="edad"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="BasuraFuera_choferes_search">
+			<field name="name">basurafuera.choferes.search</field>
+			<field name="model">basurafuera.choferes</field>
+			<field name="arch" type="xml">
+				<search>
+					<field name="name" />
+						<field name="NumTel" />
+						<field name="edad"/>
+				</search>
+			</field>
+		</record>
+
+
+
+		<!-- ACCION PARA EL MODELO basurafuera.choferes -->	
+		<record id="BasuraFuera_choferes_action" model="ir.actions.act_window">
+			<field name="name">CHOFERES</field>
+			<field name="res_model">basurafuera.choferes</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+
+	
+
+</odoo>
